@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Abhisar Kumar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="avatar-sync.js"></script>
+  <style>
+    .resume-sheet {
+      background-color: #ffffff;
+      border: 3px solid var(--border-ink);
+      border-radius: var(--radius-md);
+      padding: 2.75rem 3rem;
+      box-shadow: var(--shadow-pop-lg);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .resume-header {
+      border-bottom: 2.5px solid var(--border-ink);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .resume-name {
+      font-size: 2.4rem;
+      margin-bottom: 0.35rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .resume-contact-inline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.925rem;
+      color: var(--ink-dark);
+      font-weight: 600;
+    }
+    .resume-section-title {
+      font-size: 1.15rem;
+      color: var(--ink-black);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 2px solid var(--border-ink);
+      padding-bottom: 0.35rem;
+      margin: 1.5rem 0 0.85rem;
+      font-weight: 900;
+    }
+    .resume-entry {
+      margin-bottom: 1.15rem;
+    }
+    .resume-entry-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      color: var(--ink-black);
+      font-size: 0.975rem;
+      margin-bottom: 0.15rem;
+    }
+    .resume-entry-sub {
+      color: var(--primary-deep);
+      font-size: 0.925rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .resume-bullets {
+      margin-left: 1.35rem;
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+    .resume-bullets li {
+      margin-bottom: 0.25rem;
+    }
+    .skills-block p {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+      color: var(--ink-muted);
+    }
+    .skills-block strong {
+      color: var(--ink-black);
+    }
+    @media print {
+      body { background: #fff; }
+      .site-header, .site-footer, .no-print { display: none !important; }
+      .resume-sheet { border: none; box-shadow: none; padding: 0; }
+      main { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        ⚡ ABHISAR<span class="brand-tag">DEV</span>
+      </a>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About &amp; Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html" class="active nav-cta-btn">Resume 📄</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      
+      <!-- Top Action Bar -->
+      <div class="no-print" style="max-width: 860px; margin: 0 auto 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h1 style="font-size: 1.5rem; font-weight: 900;">Official Resume</h1>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Verified digital twin of latest uploaded PDF &bull; Updated 2026</p>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <button onclick="window.print()" class="btn btn-secondary btn-sm">🖨️ Print / Save as PDF</button>
+          <a href="resume.pdf" download="Abhisar_Kumar_Resume.pdf" class="btn btn-primary btn-sm">📥 Download Original PDF</a>
+        </div>
+      </div>
+
+      <!-- Formal Resume Sheet -->
+      <article class="resume-sheet">
+        
+        <!-- Header -->
+        <header class="resume-header">
+          <h2 class="resume-name">Abhisar Kumar</h2>
+          <div class="resume-contact-inline">
+            <span>Bareilly, Uttar Pradesh</span>
+            <span>|</span>
+            <span><a href="tel:+917488036476">+91-7488036476</a></span>
+          </div>
+          <div class="resume-contact-inline" style="margin-top: 0.35rem;">
+            <span><a href="mailto:abhisarkumar70@gmail.com">abhisarkumar70@gmail.com</a></span>
+            <span>|</span>
+            <span><a href="https://github.com/abhisar-dev" target="_blank">GitHub</a></span>
+            <span>|</span>
+            <span><a href="https://www.linkedin.com/in/abhisar-kumar-89a2872a0" target="_blank">LinkedIn</a></span>
+          </div>
+        </header>
+
+        <!-- Education -->
+        <section>
+          <h3 class="resume-section-title">Education</h3>
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span>Invertis University, Bareilly</span>
+              <span>2025 &mdash; Present</span>
+            </div>
+            <div class="resume-entry-sub">
+              <span>Bachelor of Computer Applications (BCA)</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 0;">
+              Specialization in Artificial Intelligence and Machine Learning
+            </p>
+          </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section>
+          <h3 class="resume-section-title">Technical Skills</h3>
+          <div class="skills-block">
+            <p><strong>Languages:</strong> Python, Java, SQL, HTML5, CSS3, JavaScript, TypeScript</p>
+            <p><strong>Libraries &amp; Frameworks:</strong> NumPy, Pandas, Scikit-learn, Streamlit, PyPDF</p>
+            <p><strong>Developer Tools:</strong> Git, GitHub, VS Code, Power BI, REST APIs</p>
+            <p><strong>Core Concepts:</strong> Data Structures and Algorithms (DSA), Object-Oriented Programming (OOP), Machine Learning, Data Analysis, DBMS, Agile Methodology</p>
+          </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section>
+          <h3 class="resume-section-title">Professional Experience</h3>
+          
+          <!-- Role 1: InternCareerPath -->
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span>AI/ML Intern &mdash; InternCareerPath</span>
+              <span>May 2026 &mdash; Jun 2026</span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Developed Python-based machine learning pipelines involving data preprocessing, model experimentation, and evaluation across 10,000+ records.</li>
+              <li>Applied NumPy, Pandas, and Python to engineer features and clean messy datasets, reducing data preparation overhead by 25%.</li>
+              <li>Collaborated on assigned ML deliverables adhering to Agile sprint cycles, PEP 8 code standards, and project deadlines.</li>
+              <li>Evaluated supervised learning classification models to optimize baseline performance metrics such as accuracy and F1-score.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2: Zetheta Algorithms -->
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span>Software Developer Intern &mdash; Zetheta Algorithms Pvt. Ltd.</span>
+              <span>Jun 2026 &mdash; Jul 2026</span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Contributed to core software development tasks and script refactoring using Python and Git-based collaborative workflows.</li>
+              <li>Worked on feature implementation, code optimization, and bug fixing within an Agile development environment.</li>
+              <li>Improved application reliability by diagnosing code anomalies and writing clean, modular, and maintainable software components.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+          <h3 class="resume-section-title">Projects</h3>
+
+          <!-- Project 1: Orbis -->
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span>Orbis | TypeScript, Web Architecture, State Management, UI/UX</span>
+              <span><a href="https://github.com/abhisar-dev" target="_blank">GitHub</a></span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Built a modern, scalable web platform using TypeScript, enforcing strict type-safety across 20+ modular, reusable UI components.</li>
+              <li>Implemented client-side routing, modular state management, and optimized asset bundling, cutting initial load latency by 30%.</li>
+              <li>Engineered clean component interfaces with structured error handling to prevent runtime exceptions and improve maintainability.</li>
+            </ul>
+          </div>
+
+          <!-- Project 2: life.rgb -->
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span>life.rgb | JavaScript, DOM Manipulation, Algorithmic Rendering, CSS3</span>
+              <span><a href="https://github.com/abhisar-dev" target="_blank">GitHub</a></span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Developed an interactive color-space exploration web application in JavaScript focusing on dynamic color algorithms and visual state logic.</li>
+              <li>Implemented real-time algorithmic rendering and state listeners with zero external dependencies, maintaining a fluid 60 FPS performance.</li>
+              <li>Designed an intuitive, accessible frontend layout featuring responsive controls and efficient event-driven updates.</li>
+            </ul>
+          </div>
+
+          <!-- Project 3: College Club Platform -->
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span>College Club Platform | HTML5, CSS3, JavaScript, Responsive Web Design</span>
+              <span><a href="https://github.com/abhisar-dev" target="_blank">GitHub</a></span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Designed and launched a centralized campus club discovery portal connecting multiple university clubs and 200+ student inquiries.</li>
+              <li>Created structured, accessible interfaces for club profiles, upcoming campus events, and membership registration forms.</li>
+              <li>Conducted cross-browser and cross-device testing across 8+ viewport sizes to ensure 100% layout consistency and responsiveness.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Achievements & Honours -->
+        <section>
+          <h3 class="resume-section-title">Achievements &amp; Honours</h3>
+          <ul class="resume-bullets">
+            <li>Ranked among the <strong>Top 100 teams</strong> in the Smart India Hackathon (SIH) University Internal Hackathon.</li>
+            <li>Cleared <strong>Round 1</strong> of the IIT Bhubaneswar Hackathon competing against teams across multiple institutions.</li>
+            <li>Solved <strong>100+ Data Structures and Algorithms problems on LeetCode</strong> covering arrays, strings, recursion, and sorting.</li>
+          </ul>
+        </section>
+
+        <!-- Certifications -->
+        <section>
+          <h3 class="resume-section-title">Certifications</h3>
+          <ul class="resume-bullets" style="columns: 2; -webkit-columns: 2; -moz-columns: 2;">
+            <li>Career Essentials in Generative AI by Microsoft and LinkedIn</li>
+            <li>Google AI Essentials Professional Certificate &ndash; Google</li>
+            <li>IBM SkillsBuild &ndash; Introduction to Generative AI</li>
+            <li>IBM SkillsBuild &ndash; Artificial Intelligence Fundamentals</li>
+            <li>IBM SkillsBuild &ndash; Responsible AI</li>
+            <li>AI/ML Internship Certificate &ndash; InternCareerPath</li>
+            <li>Software Developer Internship &ndash; Zetheta Algorithms Pvt. Ltd.</li>
+          </ul>
+        </section>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Abhisar Kumar &bull; Invertis University, Bareilly &bull; All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About &amp; Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

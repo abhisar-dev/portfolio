@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhisar Kumar | Full-Stack &amp; AI/ML Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="avatar-sync.js"></script>
+  <script src="motion.js"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        ⚡ ABHISAR<span class="brand-tag">DEV</span>
+      </a>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About &amp; Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.html" class="nav-cta-btn">Resume 📄</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      
+      <!-- Anime Character HUD Bar -->
+      <div class="character-hud floating-elem">
+        <div class="hud-info">
+          <span style="font-size: 1.1rem;">⚡</span>
+          <span><strong>RANK:</strong> S-TIER</span>
+          <span>&bull;</span>
+          <span><strong>LEVEL:</strong> 2026</span>
+          <span>&bull;</span>
+          <span><strong>CLASS:</strong> AI &amp; Full-Stack Engineer</span>
+        </div>
+        <div class="hud-info">
+          <span>EXP: 8,800 / 10,000</span>
+          <div class="hud-progress-container" title="Current EXP Level">
+            <div class="hud-progress-fill" id="hudExpFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          
+          <div class="anime-badge-row">
+            <span class="anime-tag pulse-badge">⚡ ONLINE &bull; READY TO CODE</span>
+            <span class="anime-tag anime-tag-alt">🎓 Invertis University, Bareilly</span>
+            <span class="anime-tag">🤖 BCA &bull; AI &amp; ML</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hey! I'm <span class="highlight">Abhisar Kumar</span> 👋<br>
+            <div class="typewriter-wrapper" style="font-size: 1.7rem; margin-top: 0.5rem;">
+              <span id="typewriterText">Full-Stack Web Architect</span><span class="typewriter-cursor"></span>
+            </div>
+          </h1>
+          
+          <p class="hero-lead">
+            BCA student specializing in Artificial Intelligence, Machine Learning, and Web Architecture. I build type-safe full-stack platforms with TypeScript, train supervised ML models, and compete in national hackathons.
+          </p>
+
+          <div class="hero-cta">
+            <a href="projects.html" class="btn btn-primary">Explore Quests / Projects &rarr;</a>
+            <a href="resume.html" class="btn btn-secondary">Inspect Resume 📄</a>
+            <a href="contact.html" class="btn btn-secondary">Connect</a>
+          </div>
+
+          <!-- Quick Connect Pills -->
+          <div class="social-pills-row">
+            <a href="https://github.com/abhisar-dev" target="_blank" rel="noopener noreferrer" class="profile-pill-link">
+              <span>🐙</span> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/abhisar-kumar-89a2872a0" target="_blank" rel="noopener noreferrer" class="profile-pill-link">
+              <span>💼</span> LinkedIn
+            </a>
+            <a href="https://leetcode.com/u/abhisar-dev/" target="_blank" rel="noopener noreferrer" class="profile-pill-link">
+              <span>💻</span> LeetCode (100+)
+            </a>
+            <a href="tel:+917488036476" class="profile-pill-link">
+              <span>📞</span> +91-7488036476
+            </a>
+            <a href="mailto:abhisarkumar70@gmail.com" class="profile-pill-link">
+              <span>✉️</span> abhisarkumar70@gmail.com
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Interactive Avatar with Edited Anime Picture -->
+        <div class="hero-image-wrapper">
+          <div class="anime-avatar-frame floating-elem">
+            <span class="avatar-rank-pill">★ S-TIER</span>
+            <img src="images/profile.jpg" alt="Abhisar Kumar Profile" class="profile-img" id="heroProfileImg">
+            <button class="avatar-edit-trigger" id="avatarEditTrigger" title="Click to upload/change your picture">
+              📷 Edit Photo
+            </button>
+            <input type="file" id="avatarFileInput" accept="image/*" style="display: none;">
+          </div>
+          <p class="avatar-caption">⚡ Anime portrait matching theme! Click <strong>"Edit Photo"</strong> to change anytime.</p>
+        </div>
+      </section>
+
+      <!-- Stats / Power Level Meter (With Animated Counters) -->
+      <section class="stats-banner reveal">
+        <div class="stat-item">
+          <div class="stat-icon">💻</div>
+          <div>
+            <div class="stat-number" data-counter="100" data-suffix="+">100+</div>
+            <div class="stat-label">LeetCode DSA Solved</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">🏆</div>
+          <div>
+            <div class="stat-number" data-counter="100" data-prefix="Top ">Top 100</div>
+            <div class="stat-label">Internal SIH Hackathon</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">⚡</div>
+          <div>
+            <div class="stat-number">Round 1</div>
+            <div class="stat-label">IIT Bhubaneswar Cracked</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">🛡️</div>
+          <div>
+            <div class="stat-number" data-counter="2" data-suffix=" Internships">2 Internships</div>
+            <div class="stat-label">AI/ML &bull; Software Dev</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🌟 DECORATED ACHIEVEMENTS & HONOURS HALL (ANIME STYLE WITH SCROLL REVEAL) -->
+      <section class="achievements-hall">
+        <div class="hall-header reveal">
+          <div>
+            <span class="anime-tag" style="margin-bottom: 0.4rem;">★ HALL OF FAME</span>
+            <h2 class="hall-title">🏆 Achievements &amp; Honours</h2>
+          </div>
+          <a href="about.html" class="btn btn-secondary btn-sm">Full Story &rarr;</a>
+        </div>
+
+        <div class="achievements-grid">
+          
+          <!-- SIH Achievement Card -->
+          <article class="trophy-card rank-s reveal delay-1">
+            <div class="rank-banner">★ S-RANK MILESTONE &bull; TOP 100 TEAMS</div>
+            <h3 class="trophy-title">Smart India Hackathon (SIH) Internal</h3>
+            <div class="trophy-meta">
+              <span>🏛️ Invertis University Selection</span> &bull; <span>National Level Pathway</span>
+            </div>
+            <p class="trophy-desc">
+              Ranked among the <strong>Top 100 teams</strong> in the Smart India Hackathon University Internal evaluation. Architected and pitched high-impact software solutions addressing real-world problem statements under strict sprint timelines.
+            </p>
+          </article>
+
+          <!-- IIT Bhubaneswar Hackathon Card -->
+          <article class="trophy-card rank-s reveal delay-2">
+            <div class="rank-banner">★ S-RANK CLEAR &bull; ROUND 1 CRACKED</div>
+            <h3 class="trophy-title">IIT Bhubaneswar Hackathon 2026</h3>
+            <div class="trophy-meta">
+              <span>🚀 Premier Institute Hackathon</span> &bull; <span>Active Finalist Contender</span>
+            </div>
+            <p class="trophy-desc">
+              Successfully cleared <strong>Round 1</strong> of the IIT Bhubaneswar Hackathon competing against elite collegiate engineering teams across India. Advanced system formulation and working prototypes into subsequent rounds.
+            </p>
+          </article>
+
+          <!-- LeetCode Problem Solving Card -->
+          <article class="trophy-card rank-s reveal delay-3">
+            <div class="rank-banner">★ A-RANK MASTERY &bull; 100+ PROBLEMS</div>
+            <h3 class="trophy-title">LeetCode Algorithmic Problem Solving</h3>
+            <div class="trophy-meta">
+              <span>🧠 Data Structures &amp; Algorithms</span> &bull; <span>Java, Python &amp; C++</span>
+            </div>
+            <p class="trophy-desc">
+              Solved <strong>100+ DSA problems on LeetCode</strong> covering Arrays, Strings, Recursion, Sorting, Two Pointers, and Binary Search with a dedicated focus on time and space complexity optimization.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Featured Real Projects (With Scroll Pop-up) -->
+      <section class="section-block">
+        <div class="hall-header reveal">
+          <div>
+            <span class="anime-tag" style="margin-bottom: 0.4rem;">★ ARSENAL OF CODE</span>
+            <h2 class="hall-title">🚀 Featured Projects</h2>
+          </div>
+          <a href="projects.html" class="btn btn-secondary btn-sm">View All 3 Projects &rarr;</a>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1: Orbis -->
+          <div class="project-card reveal-left delay-1">
+            <a href="projects.html" class="project-img-link">
+              <img src="images/orbis.jpg" alt="Orbis Web Platform" class="project-img">
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">Orbis &mdash; Scalable Web Platform</h3>
+              <p class="project-desc">
+                Built a modern, scalable web platform using TypeScript, enforcing strict type-safety across 20+ modular, reusable UI components with modular state management and 30% faster initial load latency.
+              </p>
+              <ul class="project-tech">
+                <li>TypeScript</li>
+                <li>Web Architecture</li>
+                <li>State Management</li>
+                <li>UI/UX</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/abhisar-dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo &rarr;</a>
+                <a href="projects.html" class="btn btn-secondary btn-sm">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: life.rgb -->
+          <div class="project-card reveal-right delay-2">
+            <a href="projects.html" class="project-img-link">
+              <img src="images/life_rgb.jpg" alt="life.rgb application" class="project-img">
+            </a>
+            <div class="project-body">
+              <h3 class="project-title">life.rgb &mdash; Interactive Color-Space Tool</h3>
+              <p class="project-desc">
+                Interactive color-space exploration application in JavaScript focusing on dynamic color algorithms, visual state logic, zero external dependencies, and fluid 60 FPS rendering.
+              </p>
+              <ul class="project-tech">
+                <li>JavaScript</li>
+                <li>DOM Manipulation</li>
+                <li>Algorithmic Rendering</li>
+                <li>CSS3</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/abhisar-dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo &rarr;</a>
+                <a href="projects.html" class="btn btn-secondary btn-sm">Details</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Bottom Note Box -->
+      <section class="section-block reveal">
+        <div class="note-box">
+          <p>
+            ⚡ <strong>Looking for a high-performing developer?</strong> Check out my <a href="resume.html" style="font-weight: 800; text-decoration: underline;">online resume sheet</a> or download the <a href="resume.pdf" download="Abhisar_Kumar_Resume.pdf" style="font-weight: 800; text-decoration: underline;">exact PDF resume</a>.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Abhisar Kumar &bull; Invertis University, Bareilly &bull; All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About &amp; Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>
