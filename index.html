@@ -9,9 +9,14 @@
   <link rel="alternate icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="images/favicon.png">
   <script src="avatar-sync.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/cyber3d.js"></script>
   <script src="motion.js"></script>
 </head>
 <body>
+
+  <!-- 3D WebGL Space Ambient Canvas -->
+  <div id="webgl-bg-container" class="webgl-bg-canvas" aria-hidden="true"></div>
 
   <!-- Site Navigation -->
   <header class="site-header">
@@ -113,16 +118,36 @@
 
         </div>
 
-        <!-- Official Verified Avatar (Permanent Official Identity) -->
+        <!-- Dual-Mode Hero Visual: Official Avatar & Interactive 3D Cyber Core -->
         <div class="hero-image-wrapper">
-          <div class="anime-avatar-frame floating-elem">
-            <span class="avatar-rank-pill">★ S-TIER ARCHITECT</span>
-            <span class="avatar-status-pill"><span class="status-dot"></span> ONLINE</span>
-            <img src="images/profile.jpg" alt="Abhisar Kumar Profile" class="profile-img" id="heroProfileImg">
-            <div class="avatar-badge-verified">
-              <span>⚡</span> VERIFIED PROFILE &bull; ABHISAR
+          
+          <div class="hero-mode-toggle" role="tablist">
+            <button class="mode-tab active" id="tabAvatar" role="tab">👤 Character</button>
+            <button class="mode-tab" id="tab3D" role="tab">🪐 3D WebGL Core</button>
+          </div>
+
+          <div class="hero-visual-card">
+            <!-- Mode 1: Verified Official Anime Avatar -->
+            <div class="anime-avatar-frame floating-elem" id="avatarVisual">
+              <span class="avatar-rank-pill">★ S-TIER ARCHITECT</span>
+              <span class="avatar-status-pill"><span class="status-dot"></span> ONLINE</span>
+              <img src="images/profile.jpg" alt="Abhisar Kumar Profile" class="profile-img" id="heroProfileImg">
+              <div class="avatar-badge-verified">
+                <span>⚡</span> VERIFIED PROFILE &bull; ABHISAR
+              </div>
+            </div>
+
+            <!-- Mode 2: Interactive 3D WebGL Cyber Core -->
+            <div class="cyber-core-frame" id="core3DVisual" style="display: none;">
+              <span class="avatar-rank-pill">★ 3D WEBGL CORE</span>
+              <span class="avatar-status-pill"><span class="status-dot"></span> 60 FPS</span>
+              <div id="cyber-core-canvas-container" class="cyber-core-canvas-container"></div>
+              <div class="core-tip-badge">
+                <span>🖱️ Drag to rotate &bull; Click to pulse</span>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -353,6 +378,30 @@
     if (menuToggle && navLinks) {
       menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('nav-open');
+      });
+    }
+
+    // Hero Visual Mode Switcher (Anime Avatar vs 3D WebGL Core)
+    const tabAvatar = document.getElementById('tabAvatar');
+    const tab3D = document.getElementById('tab3D');
+    const avatarVisual = document.getElementById('avatarVisual');
+    const core3DVisual = document.getElementById('core3DVisual');
+
+    if (tabAvatar && tab3D && avatarVisual && core3DVisual) {
+      tabAvatar.addEventListener('click', () => {
+        tabAvatar.classList.add('active');
+        tab3D.classList.remove('active');
+        avatarVisual.style.display = 'block';
+        core3DVisual.style.display = 'none';
+      });
+
+      tab3D.addEventListener('click', () => {
+        tab3D.classList.add('active');
+        tabAvatar.classList.remove('active');
+        avatarVisual.style.display = 'none';
+        core3DVisual.style.display = 'flex';
+        // Trigger resize for Three.js camera/renderer
+        setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
       });
     }
   </script>
