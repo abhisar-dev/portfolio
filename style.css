@@ -1118,31 +1118,15 @@ textarea.form-control {
   animation: floatAnim 4s ease-in-out infinite;
 }
 
-/* Scroll Reveal Animations (Spring / Pop-up) */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px) scale(0.96);
-  transition: opacity 0.65s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: opacity, transform;
+/* Robust Card Animations (Always Visible by Default, Zero Blank Gaps) */
+.reveal, .reveal-left, .reveal-right {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-40px) scale(0.96);
-  transition: opacity 0.65s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(40px) scale(0.96);
-  transition: opacity 0.65s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.reveal.revealed,
-.reveal-left.revealed,
-.reveal-right.revealed {
-  opacity: 1;
-  transform: translate(0, 0) scale(1);
+.reveal:hover, .reveal-left:hover, .reveal-right:hover {
+  transform: translateY(-3px) !important;
 }
 
 /* Delay helpers for staggered card animations */
@@ -1381,275 +1365,49 @@ textarea.form-control {
   box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
 }
 
-/* Floating Terminal Launcher */
-.floating-terminal-trigger {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: var(--ink-black);
-  color: #ffffff;
-  border: 2.5px solid var(--primary-bright);
-  border-radius: var(--radius-full);
-  padding: 0.6rem 1.1rem;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 800;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.35), 0 0 15px rgba(250, 204, 21, 0.3);
-  cursor: pointer;
-  z-index: 99;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.25s ease;
-}
 
-.floating-terminal-trigger:hover {
-  background: #27272a;
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.45), 0 0 25px rgba(250, 204, 21, 0.6);
-}
-
-.floating-terminal-trigger kbd {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
-  font-size: 0.72rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #facc15;
-}
-
-/* Terminal Modal Window */
-.ak-terminal-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.ak-terminal-modal.term-active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.ak-terminal-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(24, 24, 27, 0.65);
-  backdrop-filter: blur(6px);
-}
-
-.ak-terminal-box {
-  position: relative;
-  width: 100%;
-  max-width: 680px;
-  max-height: 80vh;
-  background: #09090b;
-  border: 3px solid #facc15;
-  border-radius: var(--radius-md);
-  box-shadow: 8px 8px 0px #000000, 0 0 35px rgba(250, 204, 21, 0.25);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transform: translateY(20px) scale(0.96);
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.ak-terminal-modal.term-active .ak-terminal-box {
-  transform: translateY(0) scale(1);
-}
-
-.ak-terminal-titlebar {
-  background: #18181b;
-  border-bottom: 2px solid #27272a;
-  padding: 0.65rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.titlebar-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.term-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
+.hero-role-badge {
   display: inline-block;
-  cursor: pointer;
-}
-
-.dot-red { background: #ef4444; }
-.dot-yellow { background: #eab308; }
-.dot-green { background: #22c55e; }
-
-.term-title {
-  color: #facc15;
+  background: var(--bg-surface-warm);
+  color: var(--ink-black);
+  border: 2.5px solid var(--border-ink);
+  box-shadow: 3px 3px 0px var(--border-ink);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
-  margin-left: 0.5rem;
-}
-
-.term-badge {
-  color: #71717a;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-}
-
-.ak-terminal-quick-chips {
-  background: #121214;
   padding: 0.5rem 1rem;
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #27272a;
+  border-radius: var(--radius-sm);
+  margin: 0.5rem 0 1.25rem;
+  letter-spacing: -0.01em;
 }
 
-.term-chip {
-  background: #18181b;
-  color: #facc15;
-  border: 1px solid #3f3f46;
-  border-radius: 4px;
-  padding: 0.2rem 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+/* Ensure clean social pills layout */
+.social-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.profile-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  color: var(--ink-black);
+  border: 2px solid var(--border-ink);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
   font-weight: 700;
-  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--border-ink);
   transition: all 0.15s ease;
 }
 
-.term-chip:hover {
-  background: #facc15;
-  color: #18181b;
-  border-color: #facc15;
-}
-
-.ak-terminal-output {
-  padding: 1.25rem 1rem;
-  background: #09090b;
-  color: #e4e4e7;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  line-height: 1.6;
-  min-height: 240px;
-  max-height: 380px;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.term-line {
-  margin-bottom: 0.75rem;
-}
-
-.term-hl {
-  color: #facc15;
-  font-weight: 700;
-}
-
-.term-prompt {
-  color: #38bdf8;
-  font-weight: 700;
-  margin-right: 0.4rem;
-}
-
-.ak-terminal-form {
-  display: flex;
-  align-items: center;
-  background: #18181b;
-  padding: 0.5rem 0.85rem;
-  border-top: 1px solid #27272a;
-}
-
-.term-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #ffffff;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  padding: 0.35rem 0;
-}
-
-.term-send-btn {
-  background: transparent;
-  border: none;
-  color: #facc15;
-  font-size: 1.1rem;
-  cursor: pointer;
-  padding: 0 0.5rem;
-}
-
-/* Manga Comic Toast Notification */
-.ak-manga-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
+.profile-pill-link:hover {
   background: var(--primary-bright);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-ink);
   color: var(--ink-black);
-  border: 3px solid var(--border-ink);
-  border-radius: var(--radius-sm);
-  padding: 0.65rem 1.1rem;
-  font-weight: 800;
-  font-size: 0.85rem;
-  box-shadow: 4px 4px 0px var(--border-ink);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transform: translateY(120%);
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  pointer-events: none;
-}
-
-.ak-manga-toast.toast-show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Anime Confetti Sparks */
-.anime-confetti-spark {
-  position: fixed;
-  width: 12px;
-  height: 12px;
-  background: #facc15;
-  border: 1.5px solid #18181b;
-  transform: rotate(45deg);
-  pointer-events: none;
-  z-index: 3000;
-  animation: confettiFall 1.2s ease-out forwards;
-}
-
-@keyframes confettiFall {
-  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
-  100% { transform: translateY(160px) rotate(360deg) scale(0); opacity: 0; }
-}
-
-@media (max-width: 768px) {
-  .floating-terminal-trigger {
-    bottom: 16px;
-    right: 16px;
-    padding: 0.5rem 0.85rem;
-  }
-  .ak-terminal-box {
-    max-height: 85vh;
-  }
 }
