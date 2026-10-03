@@ -3,14 +3,14 @@
   'use strict';
 
   /* ==========================================================================
-     1. DUAL THEME ENGINE (Light & Cyber Obsidian Dark Mode)
+     1. THEME ENGINE - LIGHT YELLOW ANIME (OFFICIAL REQUESTED THEME)
      ========================================================================== */
   const THEME_KEY = 'abhisar_theme_preference';
   
   function initTheme() {
+    // Default to the user's signature Light Yellow Anime theme
     const saved = localStorage.getItem(THEME_KEY);
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = saved || (prefersDark ? 'dark' : 'light');
+    const initial = saved || 'light';
     setTheme(initial);
 
     const toggleBtn = document.getElementById('themeToggleBtn');
@@ -19,7 +19,7 @@
         const current = document.documentElement.getAttribute('data-theme') || 'light';
         const next = current === 'dark' ? 'light' : 'dark';
         setTheme(next);
-        showToast(`Theme switched to ${next.toUpperCase()} mode! 🌓`);
+        showToast(`Theme: ${next === 'dark' ? 'Cyber Obsidian' : 'Golden Anime'} ⚡`);
       });
     }
   }
@@ -30,7 +30,7 @@
     const toggleBtn = document.getElementById('themeToggleBtn');
     if (toggleBtn) {
       toggleBtn.innerHTML = theme === 'dark' ? '☀️ <span>Day</span>' : '🌙 <span>Night</span>';
-      toggleBtn.setAttribute('title', `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`);
+      toggleBtn.setAttribute('title', `Switch to ${theme === 'dark' ? 'Golden Anime' : 'Cyber Night'} Mode`);
     }
   }
 
@@ -201,48 +201,7 @@
   }
 
   /* ==========================================================================
-     6. STATS NUMBER COUNTER
-     ========================================================================== */
-  function initCounters() {
-    const counterElements = document.querySelectorAll('[data-counter]');
-    
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.dataset.counted) {
-          entry.target.dataset.counted = "true";
-          animateCounter(entry.target);
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    counterElements.forEach(el => observer.observe(el));
-  }
-
-  function animateCounter(el) {
-    const target = parseInt(el.getAttribute('data-counter'), 10);
-    const suffix = el.getAttribute('data-suffix') || '';
-    const prefix = el.getAttribute('data-prefix') || '';
-    const duration = 1200;
-    const startTime = performance.now();
-
-    function update(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const current = Math.floor(ease * target);
-      el.textContent = `${prefix}${current}${suffix}`;
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = `${prefix}${target}${suffix}`;
-      }
-    }
-    requestAnimationFrame(update);
-  }
-
-  /* ==========================================================================
-     7. INITIALIZATION ON DOM READY
+     6. INITIALIZATION ON DOM READY
      ========================================================================== */
   window.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -250,7 +209,6 @@
     initTimelineTabs();
     initCommandPalette();
     initCopyTriggers();
-    initCounters();
 
     // Mobile nav toggle
     const toggle = document.getElementById('menuToggle');
