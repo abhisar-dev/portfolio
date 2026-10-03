@@ -1,53 +1,35 @@
-﻿// Avatar sync and photo customization logic for Abhisar Kumar Portfolio
+// Abhisar Kumar Official Portfolio - Profile Protection & System Enforcement
 (function() {
-  function syncAvatar() {
-    const saved = localStorage.getItem('abhisar_custom_avatar');
-    if (saved) {
-      document.querySelectorAll('.profile-img').forEach(img => {
-        img.src = saved;
-      });
+  'use strict';
+
+  // Clear any visitor-uploaded avatar cached from previous sessions
+  try {
+    if (localStorage.getItem('abhisar_custom_avatar')) {
+      localStorage.removeItem('abhisar_custom_avatar');
     }
+  } catch (e) {
+    // LocalStorage might be restricted
   }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    syncAvatar();
+  // Enforce official avatar
+  function enforceOfficialAvatar() {
+    const officialSrc = 'images/profile.jpg';
+    document.querySelectorAll('.profile-img').forEach(img => {
+      if (img.getAttribute('src') !== officialSrc) {
+        img.src = officialSrc;
+      }
+    });
 
-    const trigger = document.getElementById('avatarEditTrigger');
-    const fileInput = document.getElementById('avatarFileInput');
+    // Remove any leftover file inputs or edit buttons if cached in DOM
+    const oldTrigger = document.getElementById('avatarEditTrigger');
+    if (oldTrigger) oldTrigger.remove();
+    const oldInput = document.getElementById('avatarFileInput');
+    if (oldInput) oldInput.remove();
+  }
 
-    if (trigger && fileInput) {
-      trigger.addEventListener('click', () => {
-        fileInput.click();
-      });
-
-      fileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function(event) {
-            const dataUrl = event.target.result;
-            localStorage.setItem('abhisar_custom_avatar', dataUrl);
-            syncAvatar();
-            
-            // Visual feedback
-            const frame = document.querySelector('.anime-avatar-frame');
-            if (frame) {
-              frame.style.transform = 'scale(1.08)';
-              frame.style.boxShadow = '0 0 35px #facc15';
-              setTimeout(() => {
-                frame.style.transform = '';
-                frame.style.boxShadow = '';
-              }, 400);
-            }
-          };
-          reader.readAsDataURL(file);
-        }
-      });
-    }
-  });
-
-  window.resetAvatar = function() {
-    localStorage.removeItem('abhisar_custom_avatar');
-    location.reload();
-  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enforceOfficialAvatar);
+  } else {
+    enforceOfficialAvatar();
+  }
 })();

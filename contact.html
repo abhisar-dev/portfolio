@@ -5,15 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Abhisar Kumar</title>
   <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="images/favicon.png">
   <script src="avatar-sync.js"></script>
+  <script src="sfx.js"></script>
+  <script src="tilt.js"></script>
+  <script src="terminal.js"></script>
 </head>
 <body>
 
   <!-- Site Navigation -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="brand-logo">
-        ⚡ ABHISAR<span class="brand-tag">DEV</span>
+      <a href="index.html" class="brand-logo" title="Abhisar Kumar Portfolio">
+        <span class="brand-icon-wrapper">
+          <svg class="brand-icon-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="60,6 108,32 108,88 60,114 12,88 12,32" fill="#facc15" stroke="#18181b" stroke-width="7" stroke-linejoin="round"/>
+            <polygon points="60,16 98,38 98,82 60,104 22,82 22,38" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.8"/>
+            <path d="M34 82 L48 38 L62 82 M38 68 L58 68" stroke="#18181b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M68 38 L68 82 M68 60 L86 38 M70 56 L88 82" stroke="#18181b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="60,20 66,32 58,32 63,44 52,35 58,35" fill="#ffffff" stroke="#18181b" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">ABHISAR<span class="brand-tag">DEV</span></span>
       </a>
       <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
       <nav>
@@ -23,6 +38,7 @@
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
           <li><a href="resume.html" class="nav-cta-btn">Resume 📄</a></li>
+          <li><button id="sfxToggleBtn" class="sfx-toggle-btn" title="Toggle Anime Sound FX">⚡ <span>SFX: ON</span></button></li>
         </ul>
       </nav>
     </div>
@@ -83,14 +99,14 @@
                 <div class="contact-icon">📞</div>
                 <div>
                   <div class="contact-info-label">Mobile Number</div>
-                  <a href="tel:+917488036476" class="contact-info-val">+91-7488036476</a>
+                  <a href="tel:+917488036476" data-copy="+917488036476" title="Click to copy phone number" class="contact-info-val">+91-7488036476</a>
                 </div>
               </li>
               <li class="contact-info-item">
                 <div class="contact-icon">✉️</div>
                 <div>
                   <div class="contact-info-label">Direct Email</div>
-                  <a href="mailto:abhisarkumar70@gmail.com" class="contact-info-val">abhisarkumar70@gmail.com</a>
+                  <a href="mailto:abhisarkumar70@gmail.com" data-copy="abhisarkumar70@gmail.com" title="Click to copy email address" class="contact-info-val">abhisarkumar70@gmail.com</a>
                 </div>
               </li>
               <li class="contact-info-item">

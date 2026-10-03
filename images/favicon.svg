@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <filter id="shadowFilter" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#18181b" />
+    </filter>
+  </defs>
+
+  <!-- Neo-Manga Shield / Hexagon with Hard Ink Drop-Shadow -->
+  <polygon points="60,6 108,32 108,88 60,114 12,88 12,32" 
+           fill="url(#goldGrad)" 
+           stroke="#18181b" 
+           stroke-width="7" 
+           stroke-linejoin="round"
+           filter="url(#shadowFilter)" />
+
+  <!-- Inner Cyber Accent Lines -->
+  <polygon points="60,16 98,38 98,82 60,104 22,82 22,38" 
+           fill="none" 
+           stroke="#ffffff" 
+           stroke-width="2.5" 
+           stroke-dasharray="8 4" 
+           opacity="0.8" />
+
+  <!-- Central Stylized "AK" Manga Monogram -->
+  <!-- Letter A -->
+  <path d="M34 82 L48 38 L62 82 M38 68 L58 68" 
+        stroke="#18181b" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none" />
+  
+  <!-- Letter K connected dynamically -->
+  <path d="M68 38 L68 82 M68 60 L86 38 M70 56 L88 82" 
+        stroke="#18181b" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none" />
+
+  <!-- Electric Spark Accent -->
+  <polygon points="60,20 66,32 58,32 63,44 52,35 58,35" 
+           fill="#ffffff" 
+           stroke="#18181b" 
+           stroke-width="2" 
+           stroke-linejoin="round"/>
+
+  <!-- S-Tier Dot -->
+  <circle cx="92" cy="28" r="5" fill="#ef4444" stroke="#18181b" stroke-width="2"/>
+</svg>

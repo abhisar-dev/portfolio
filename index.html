@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abhisar Kumar | Full-Stack &amp; AI/ML Developer</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="images/favicon.png">
   <script src="avatar-sync.js"></script>
+  <script src="sfx.js"></script>
+  <script src="particles.js"></script>
+  <script src="tilt.js"></script>
+  <script src="terminal.js"></script>
   <script src="motion.js"></script>
 </head>
 <body>
@@ -13,8 +20,17 @@
   <!-- Site Navigation -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="brand-logo">
-        ⚡ ABHISAR<span class="brand-tag">DEV</span>
+      <a href="index.html" class="brand-logo" title="Abhisar Kumar Portfolio">
+        <span class="brand-icon-wrapper">
+          <svg class="brand-icon-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="60,6 108,32 108,88 60,114 12,88 12,32" fill="#facc15" stroke="#18181b" stroke-width="7" stroke-linejoin="round"/>
+            <polygon points="60,16 98,38 98,82 60,104 22,82 22,38" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.8"/>
+            <path d="M34 82 L48 38 L62 82 M38 68 L58 68" stroke="#18181b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M68 38 L68 82 M68 60 L86 38 M70 56 L88 82" stroke="#18181b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="60,20 66,32 58,32 63,44 52,35 58,35" fill="#ffffff" stroke="#18181b" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">ABHISAR<span class="brand-tag">DEV</span></span>
       </a>
       <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
       <nav>
@@ -24,6 +40,7 @@
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="resume.html" class="nav-cta-btn">Resume 📄</a></li>
+          <li><button id="sfxToggleBtn" class="sfx-toggle-btn" title="Toggle Anime Sound FX">⚡ <span>SFX: ON</span></button></li>
         </ul>
       </nav>
     </div>
@@ -51,8 +68,9 @@
         </div>
       </div>
 
-      <!-- Hero Section -->
+      <!-- Hero Section (With Canvas Golden Sparks) -->
       <section class="hero">
+        <canvas id="heroParticlesCanvas" class="hero-particles-canvas"></canvas>
         <div class="hero-content">
           
           <div class="anime-badge-row">
@@ -89,27 +107,26 @@
             <a href="https://leetcode.com/u/abhisar-dev/" target="_blank" rel="noopener noreferrer" class="profile-pill-link">
               <span>💻</span> LeetCode (100+)
             </a>
-            <a href="tel:+917488036476" class="profile-pill-link">
+            <a href="tel:+917488036476" class="profile-pill-link" data-copy="+917488036476" title="Click to copy phone number">
               <span>📞</span> +91-7488036476
             </a>
-            <a href="mailto:abhisarkumar70@gmail.com" class="profile-pill-link">
+            <a href="mailto:abhisarkumar70@gmail.com" class="profile-pill-link" data-copy="abhisarkumar70@gmail.com" title="Click to copy email address">
               <span>✉️</span> abhisarkumar70@gmail.com
             </a>
           </div>
 
         </div>
 
-        <!-- Interactive Avatar with Edited Anime Picture -->
+        <!-- Official Verified Avatar (Permanent Official Identity) -->
         <div class="hero-image-wrapper">
           <div class="anime-avatar-frame floating-elem">
-            <span class="avatar-rank-pill">★ S-TIER</span>
+            <span class="avatar-rank-pill">★ S-TIER ARCHITECT</span>
+            <span class="avatar-status-pill"><span class="status-dot"></span> ONLINE</span>
             <img src="images/profile.jpg" alt="Abhisar Kumar Profile" class="profile-img" id="heroProfileImg">
-            <button class="avatar-edit-trigger" id="avatarEditTrigger" title="Click to upload/change your picture">
-              📷 Edit Photo
-            </button>
-            <input type="file" id="avatarFileInput" accept="image/*" style="display: none;">
+            <div class="avatar-badge-verified">
+              <span>⚡</span> VERIFIED PROFILE &bull; ABHISAR
+            </div>
           </div>
-          <p class="avatar-caption">⚡ Anime portrait matching theme! Click <strong>"Edit Photo"</strong> to change anytime.</p>
         </div>
       </section>
 
@@ -144,6 +161,54 @@
           <div>
             <div class="stat-number" data-counter="2" data-suffix=" Internships">2 Internships</div>
             <div class="stat-label">AI/ML &bull; Software Dev</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⚔️ COMBAT & DEV ATTRIBUTES (HARD-MODE HUD) -->
+      <section class="combat-panel reveal">
+        <div class="combat-header">
+          <h3 style="font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;">
+            ⚔️ Core Engineering Attributes
+          </h3>
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--ink-muted);">RANKING: TOP 1% CONTENDER</span>
+        </div>
+        <div class="combat-grid">
+          <div class="combat-item">
+            <div class="combat-header">
+              <span>Full-Stack &amp; TypeScript Architecture</span>
+              <span class="combat-score">94% &bull; S-TIER</span>
+            </div>
+            <div class="combat-track">
+              <div class="combat-bar" style="width: 94%;"></div>
+            </div>
+          </div>
+          <div class="combat-item">
+            <div class="combat-header">
+              <span>Supervised AI &amp; Machine Learning</span>
+              <span class="combat-score">88% &bull; A-TIER</span>
+            </div>
+            <div class="combat-track">
+              <div class="combat-bar" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div class="combat-item">
+            <div class="combat-header">
+              <span>Algorithmic Problem Solving (LeetCode 100+)</span>
+              <span class="combat-score">86% &bull; A-TIER</span>
+            </div>
+            <div class="combat-track">
+              <div class="combat-bar" style="width: 86%;"></div>
+            </div>
+          </div>
+          <div class="combat-item">
+            <div class="combat-header">
+              <span>Competitive Hackathons (SIH &amp; IIT BBS)</span>
+              <span class="combat-score">96% &bull; S-TIER</span>
+            </div>
+            <div class="combat-track">
+              <div class="combat-bar" style="width: 96%;"></div>
+            </div>
           </div>
         </div>
       </section>
