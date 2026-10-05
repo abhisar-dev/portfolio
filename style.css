@@ -640,23 +640,205 @@ main {
   box-shadow: var(--shadow-pop-hover);
 }
 
+/* ==========================================================================
+   DECORATED PROJECT BANNER (ANIME WORKSTATION & HUD STYLE)
+   ========================================================================== */
+
+.project-banner {
+  position: relative;
+  border-bottom: 2.5px solid var(--border-ink);
+  background-color: var(--ink-black);
+  overflow: hidden;
+}
+
+/* Cyber Window Top Bar */
+.project-banner-bar {
+  background-color: #1e1e24;
+  padding: 0.45rem 0.85rem;
+  border-bottom: 2px solid var(--border-ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  font-family: var(--font-mono);
+}
+
+.banner-dots {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.banner-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  display: inline-block;
+}
+
+.banner-dots span:nth-child(1) { background-color: #ef4444; }
+.banner-dots span:nth-child(2) { background-color: #facc15; }
+.banner-dots span:nth-child(3) { background-color: #22c55e; }
+
+.banner-url {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #d4d4d8;
+  letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.banner-status {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #facc15;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .project-img-link {
   display: block;
+  position: relative;
   overflow: hidden;
-  background-color: var(--ink-dark);
-  border-bottom: 2.5px solid var(--border-ink);
+  background-color: #09090b;
 }
 
 .project-img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+/* Subtle anime halftone pattern on banner hover */
+.project-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(#facc15 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.project-card:hover .project-banner::after {
+  opacity: 0.15;
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.03);
+  transform: scale(1.05);
+  filter: saturate(1.15) brightness(1.03);
+}
+
+/* Banner Floating Badge */
+.banner-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  border: 1.5px solid var(--primary-bright);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  letter-spacing: 0.03em;
+}
+
+/* Corner Target Accents on Banner */
+.banner-crosshair {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--primary-bright);
+  color: var(--ink-black);
+  border: 1.5px solid var(--border-ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 2px 2px 0px var(--border-ink);
+  z-index: 3;
+  letter-spacing: 0.04em;
+}
+
+/* Decorated Projects Page Top Banner */
+.projects-hero-banner {
+  background: #ffffff;
+  border: 3px solid var(--border-ink);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 2.75rem;
+  box-shadow: var(--shadow-pop);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #facc15, #f59e0b, #ef4444);
+}
+
+.banner-decor-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--primary-bright);
+  color: var(--ink-black);
+  border: 1.5px solid var(--border-ink);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 900;
+  font-family: var(--font-mono);
+  box-shadow: 2px 2px 0px var(--border-ink);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.banner-stats-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.banner-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg-surface-warm);
+  border: 1.5px solid var(--border-ink);
+  color: var(--ink-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  box-shadow: 1.5px 1.5px 0px var(--border-ink);
 }
 
 .project-body {
