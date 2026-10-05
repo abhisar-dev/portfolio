@@ -35,7 +35,7 @@
           <li><a href="about.html">About &amp; Experience</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="resume.html" class="nav-cta-btn">Resume 📄</a></li>
+          <li><a href="resume.html" class="nav-cta-btn active">Resume 📄</a></li>
         </ul>
       </nav>
     </div>
@@ -46,12 +46,12 @@
     <div class="container">
       
       <!-- Top Action Bar -->
-      <div class="no-print" style="max-width: 860px; margin: 0 auto 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div class="resume-action-bar no-print">
         <div>
-          <h1 style="font-size: 1.5rem; font-weight: 900;">Official Resume</h1>
-          <p style="font-size: 0.9rem; margin-bottom: 0;">Verified digital twin of latest uploaded PDF &bull; Updated 2026</p>
+          <h1 class="resume-action-title">📄 Official Resume</h1>
+          <p class="resume-action-subtitle">Verified digital twin of latest uploaded PDF &bull; Updated 2026</p>
         </div>
-        <div style="display: flex; gap: 0.75rem;">
+        <div class="resume-action-buttons">
           <button onclick="window.print()" class="btn btn-secondary btn-sm">🖨️ Print / Save as PDF</button>
           <a href="resume.pdf" download="Abhisar_Kumar_Resume.pdf" class="btn btn-primary btn-sm">📥 Download Original PDF</a>
         </div>
@@ -59,26 +59,27 @@
 
       <!-- Formal Resume Sheet -->
       <article class="resume-sheet">
+        <span class="resume-watermark">⚡ ATS VERIFIED // 2026</span>
         
         <!-- Header -->
         <header class="resume-header">
           <h2 class="resume-name">Abhisar Kumar</h2>
           <div class="resume-contact-inline">
-            <span>Bareilly, Uttar Pradesh</span>
-            <span>|</span>
-            <span><a href="tel:+917488036476">+91-7488036476</a></span>
+            <span>📍 Bareilly, Uttar Pradesh</span>
+            <span class="resume-divider-dot">&bull;</span>
+            <span>📞 <a href="tel:+917488036476">+91-7488036476</a></span>
+            <span class="resume-divider-dot">&bull;</span>
+            <span>✉️ <a href="mailto:abhisarkumar70@gmail.com">abhisarkumar70@gmail.com</a></span>
           </div>
-          <div class="resume-contact-inline" style="margin-top: 0.35rem;">
-            <span><a href="mailto:abhisarkumar70@gmail.com">abhisarkumar70@gmail.com</a></span>
-            <span>|</span>
-            <span><a href="https://github.com/abhisar-dev" target="_blank">GitHub</a></span>
-            <span>|</span>
-            <span><a href="https://www.linkedin.com/in/abhisar-kumar-89a2872a0" target="_blank">LinkedIn</a></span>
+          <div class="resume-contact-inline" style="margin-top: 0.45rem;">
+            <span>💻 <a href="https://github.com/abhisar-dev" target="_blank" rel="noopener noreferrer">github.com/abhisar-dev</a></span>
+            <span class="resume-divider-dot">&bull;</span>
+            <span>🔗 <a href="https://www.linkedin.com/in/abhisar-kumar-89a2872a0" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></span>
           </div>
         </header>
 
         <!-- Education -->
-        <section>
+        <section class="resume-section" id="education">
           <h3 class="resume-section-title">Education</h3>
           <div class="resume-entry">
             <div class="resume-entry-header">
@@ -95,7 +96,7 @@
         </section>
 
         <!-- Technical Skills -->
-        <section>
+        <section class="resume-section" id="skills">
           <h3 class="resume-section-title">Technical Skills</h3>
           <div class="skills-block">
             <p><strong>Languages:</strong> Python, Java, SQL, HTML5, CSS3, JavaScript, TypeScript</p>
@@ -106,7 +107,7 @@
         </section>
 
         <!-- Professional Experience -->
-        <section>
+        <section class="resume-section" id="experience">
           <h3 class="resume-section-title">Professional Experience</h3>
           
           <!-- Role 1: InternCareerPath -->
@@ -138,7 +139,7 @@
         </section>
 
         <!-- Projects -->
-        <section>
+        <section class="resume-section" id="projects">
           <h3 class="resume-section-title">Projects</h3>
 
           <!-- Project 1: Orbis -->
@@ -182,7 +183,7 @@
         </section>
 
         <!-- Achievements & Honours -->
-        <section>
+        <section class="resume-section" id="achievements">
           <h3 class="resume-section-title">Achievements &amp; Honours</h3>
           <ul class="resume-bullets">
             <li>Ranked among the <strong>Top 100 teams</strong> in the Smart India Hackathon (SIH) University Internal Hackathon.</li>
@@ -192,7 +193,7 @@
         </section>
 
         <!-- Certifications -->
-        <section>
+        <section class="resume-section" id="certifications">
           <h3 class="resume-section-title">Certifications</h3>
           <ul class="resume-bullets" style="columns: 2; -webkit-columns: 2; -moz-columns: 2;">
             <li>Career Essentials in Generative AI by Microsoft and LinkedIn</li>

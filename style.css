@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * Abhisar Kumar Portfolio — Anime Yellow Aesthetics (Neo-Manga Modern Light Theme)
  * Vibrant Yellow, Manga Ink Lines, Dynamic Slanted Badges, and Golden Glow
  */
@@ -1411,3 +1411,305 @@ textarea.form-control {
   box-shadow: 3px 3px 0px var(--border-ink);
   color: var(--ink-black);
 }
+
+/* ==========================================================================
+   RESUME SHEET & ATS DOCUMENT STYLES
+   ========================================================================== */
+
+.resume-action-bar {
+  max-width: 880px;
+  margin: 0 auto 1.75rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.resume-action-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink-black);
+}
+
+.resume-action-subtitle {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.resume-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.resume-sheet {
+  background-color: #ffffff;
+  border: 3px solid var(--border-ink);
+  border-radius: var(--radius-md);
+  padding: 2.75rem 3.25rem;
+  box-shadow: var(--shadow-pop-lg);
+  max-width: 880px;
+  margin: 0 auto 4rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-sheet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #facc15, #f59e0b, #ef4444);
+}
+
+.resume-watermark {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg-surface-warm);
+  border: 1.5px solid var(--border-ink);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--ink-dark);
+  box-shadow: 1.5px 1.5px 0px var(--border-ink);
+  letter-spacing: 0.04em;
+}
+
+.resume-header {
+  border-bottom: 2.5px solid var(--border-ink);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
+  position: relative;
+}
+
+.resume-name {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--ink-black);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.resume-contact-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--ink-dark);
+  font-weight: 600;
+}
+
+.resume-contact-inline a {
+  color: var(--ink-black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+  transition: color 0.15s ease;
+}
+
+.resume-contact-inline a:hover {
+  color: var(--primary-deep);
+}
+
+.resume-section {
+  margin-bottom: 1.6rem;
+}
+
+.resume-section:last-child {
+  margin-bottom: 0;
+}
+
+.resume-section-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--ink-black);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--border-ink);
+  padding-bottom: 0.4rem;
+  margin: 1.5rem 0 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-section-title::before {
+  content: "■";
+  color: var(--primary-bright);
+  font-size: 0.85rem;
+  text-shadow: 1px 1px 0px var(--border-ink);
+}
+
+.resume-entry {
+  margin-bottom: 1.2rem;
+}
+
+.resume-entry:last-child {
+  margin-bottom: 0.5rem;
+}
+
+.resume-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 0.98rem;
+  color: var(--ink-black);
+  margin-bottom: 0.2rem;
+}
+
+.resume-entry-sub {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--primary-deep);
+  margin-bottom: 0.4rem;
+}
+
+.resume-bullets {
+  margin: 0.35rem 0 0.75rem 1.35rem;
+  font-size: 0.92rem;
+  color: var(--ink-dark);
+  line-height: 1.65;
+}
+
+.resume-bullets li {
+  margin-bottom: 0.35rem;
+}
+
+.skills-block {
+  background-color: var(--bg-surface-warm);
+  border: 1.5px solid var(--border-ink);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink-dark);
+}
+
+.skills-block p {
+  margin-bottom: 0.45rem;
+}
+
+.skills-block p:last-child {
+  margin-bottom: 0;
+}
+
+.skills-block strong {
+  color: var(--ink-black);
+  font-weight: 800;
+}
+
+/* Nav Active state for CTA */
+.nav-links a.active.nav-cta-btn {
+  background-color: var(--primary) !important;
+  box-shadow: 2px 2px 0px var(--border-ink) !important;
+  transform: translate(1px, 1px);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .site-header,
+  .site-footer,
+  .no-print,
+  .resume-watermark {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .resume-sheet {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  .resume-sheet::before {
+    display: none !important;
+  }
+  .resume-section-title {
+    border-bottom: 1.5px solid #000000 !important;
+  }
+  .resume-entry-header,
+  .resume-entry-sub,
+  .resume-name,
+  .skills-block strong {
+    color: #000000 !important;
+  }
+  .skills-block {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}
+
+/* Responsive adjustment for resume sheet on mobile */
+@media (max-width: 680px) {
+  .resume-sheet {
+    padding: 1.75rem 1.25rem;
+    border-width: 2px;
+  }
+  .resume-watermark {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+  .resume-name {
+    font-size: 1.85rem;
+  }
+  .resume-entry-header {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .resume-bullets {
+    margin-left: 1.1rem;
+    font-size: 0.88rem;
+  }
+  .resume-bullets[style*="columns"] {
+    columns: 1 !important;
+    -webkit-columns: 1 !important;
+  }
+  .resume-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .resume-action-buttons {
+    width: 100%;
+  }
+  .resume-action-buttons .btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
